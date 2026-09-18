@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oscar Burgos — Director & VFX Animator</title>
+  <meta name="description" content="Oscar Burgos. Director & VFX animator in London. Lead animator on Mufasa: The Lion King, animator on Avengers: Infinity War. AI filmmaker and co-founder of Beat Maps Squad.">
+  <meta name="theme-color" content="#060606">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Oscar Burgos — Director & VFX Animator">
+  <meta property="og:description" content="I am animating the future. Seventeen years of character and creature animation, now paired with AI filmmaking.">
+  <meta property="og:image" content="assets/img/warsaw-glitch-2026.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/timo-32.png">
+  <link rel="apple-touch-icon" href="assets/img/timo-192.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,600;100,900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Oscar Burgos — home">
+      <img src="assets/img/timo-192.png" alt="" width="36" height="36" class="brand__timo">
+      <span class="brand__name">Oscar<b>Burgos</b></span>
+    </a>
+    <nav class="nav__links" id="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#studio">Studio</a>
+      <a href="#timo">Timo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--small nav__cta" href="#contact">Let's talk</a>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/img/hero-llaqta.jpg" alt="" loading="eager" fetchpriority="high">
+      </div>
+      <div class="hero__inner">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> <span data-site="role">Director &amp; VFX Animator</span> · <span data-site="location">London, UK</span></p>
+        <h1 class="hero__title reveal">
+          <span class="hero__first">Oscar</span>
+          <span class="hero__last">Burgos</span>
+        </h1>
+        <p class="hero__tagline reveal" data-site="tagline">I am animating the future</p>
+        <p class="hero__intro reveal" data-site="intro"></p>
+        <div class="hero__actions reveal">
+          <a class="btn" id="showreel-btn" href="#" target="_blank" rel="noopener">▶ Watch showreel</a>
+          <a class="btn btn--ghost" href="#work">Selected work ↓</a>
+        </div>
+      </div>
+      <div class="hero__meta reveal" aria-hidden="true">
+        <span>17+ yrs</span><span>VFX · Animation · AI film</span><span>EN / ES / PT</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-label="Selected credits">
+      <div class="marquee__track" id="marquee"></div>
+    </div>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">01</span> Selected work</h2>
+        <div class="filters" id="filters" role="tablist" aria-label="Filter projects">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="ai-film" role="tab" aria-selected="false">AI films</button>
+          <button class="chip" data-filter="vfx" role="tab" aria-selected="false">VFX credits</button>
+          <button class="chip" data-filter="talk" role="tab" aria-selected="false">Talks</button>
+        </div>
+      </div>
+      <div class="grid" id="projects"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--split" id="about">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">02</span> About</h2>
+      </div>
+      <div class="about">
+        <div class="about__text">
+          <p class="lede">Lead and senior animator with 17+ years in VFX and animation, and an AI filmmaker since 2025.</p>
+          <p>Recognized for contributions to Disney's <em>Mufasa</em>, Netflix's <em>Avatar: The Last Airbender</em> and Apple TV+'s <em>Prehistoric Planet</em>. Animation work featured in award-winning productions including <em>Avengers: Infinity War</em>, <em>Christopher Robin</em> and <em>His Dark Materials</em>.</p>
+          <p>Now pairing that craft with generative AI production: director of festival-recognized AI short films, creator of the original IP <em>LLAQTA</em>, co-founder of London creative studio Beat Maps Squad, and Creative Partner for Magnific, Dreamina, Topaz Labs and CapCut.</p>
+          <dl class="facts">
+            <div><dt>Based in</dt><dd>London, UK</dd></div>
+            <div><dt>Nationality</dt><dd>Colombian &amp; British</dd></div>
+            <div><dt>Languages</dt><dd>Spanish · English · Portuguese</dd></div>
+            <div><dt>Currently</dt><dd>Senior Character/Creature Animator, Framestore</dd></div>
+          </dl>
+        </div>
+        <aside class="about__side">
+          <h3 class="mono">Studios</h3>
+          <ul class="pills" id="studios"></ul>
+          <h3 class="mono">Creative partner</h3>
+          <ul class="pills" id="partners"></ul>
+          <h3 class="mono">Recognition</h3>
+          <ol class="awards" id="awards"></ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="section studio" id="studio">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">03</span> Studio</h2>
+      </div>
+      <div class="studio__card">
+        <p class="mono studio__kicker">Co-founder &amp; Creative Director</p>
+        <h3 class="studio__name">Beat Maps Squad</h3>
+        <p class="studio__tag">Stories that move.</p>
+        <p>A London creative collective specialising in storytelling, animation and cinematic, AI-assisted visual and sound design for brands and social-cause initiatives.</p>
+        <a class="btn btn--ghost" href="https://bmsquad.com" target="_blank" rel="noopener">bmsquad.com ↗</a>
+      </div>
+    </section>
+
+    <!-- TIMO -->
+    <section class="section timo" id="timo">
+      <div class="timo__inner">
+        <button class="timo__avatar" id="timo-avatar" aria-label="Say hi to Timo">
+          <img src="assets/img/timo-512.png" alt="Timo, a pixel-art springer spaniel wearing glasses" width="220" height="220">
+          <span class="timo__bark" aria-hidden="true">woof</span>
+        </button>
+        <div class="timo__text">
+          <p class="mono">Meet the team</p>
+          <h2 class="timo__name" data-timo="name">Timo</h2>
+          <p class="timo__title" data-timo="title"></p>
+          <p data-timo="blurb"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">04</span> Contact</h2>
+      </div>
+      <p class="contact__big">Got a creature to bring to life, a story to tell, or a pipeline to figure out?<br>
+        <a id="contact-email" href="#">Write to me</a>.</p>
+      <ul class="links" id="links"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Oscar Burgos</span>
+    <span class="mono">Animating the future · London</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+    <div class="lightbox__frame" id="lightbox-frame"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
