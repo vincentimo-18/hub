@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip" href="#work">Skip to work</a>
+  <a class="skip" href="#reels">Skip to content</a>
 
   <header class="nav" id="top">
     <a class="brand" href="#top" aria-label="Oscar Burgos — home">
@@ -32,7 +32,9 @@
       <img src="assets/img/oscar-burgos-signature.png" alt="Oscar Burgos" class="brand__sig" height="34">
     </a>
     <nav class="nav__links" id="nav-links">
-      <a href="#work">Work</a>
+      <a href="#reels">Reels</a>
+      <a href="#ai">AI work</a>
+      <a href="#credits">Credits</a>
       <a href="#about">About</a>
       <a href="#studio">Studio</a>
       <a href="#timo">Timo</a>
@@ -47,25 +49,19 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__bg" aria-hidden="true">
-        <img src="assets/img/hero-llaqta.jpg" alt="" loading="eager" fetchpriority="high">
+      <div class="hero__bg" id="hero-bg" aria-hidden="true">
+        <img src="assets/img/hero-llaqta.jpg" alt="" id="hero-poster" loading="eager" fetchpriority="high">
       </div>
       <div class="hero__inner">
-        <p class="eyebrow reveal"><span class="eyebrow__dot"></span> <span data-site="role">Director &amp; VFX Animator</span> · <span data-site="location">London, UK</span></p>
         <h1 class="hero__title reveal">
           <span class="hero__first">Oscar</span>
           <span class="hero__last">Burgos</span>
         </h1>
         <p class="hero__tagline reveal" data-site="tagline">I am animating the future</p>
-        <p class="hero__intro reveal" data-site="intro"></p>
-        <div class="hero__actions reveal">
-          <a class="btn" id="showreel-btn" href="#" target="_blank" rel="noopener">▶ Watch showreel</a>
-          <a class="btn btn--ghost" href="#work">Selected work ↓</a>
-        </div>
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span><span data-site="role">Director &amp; VFX Animator</span> · <span data-site="location">London, UK</span></p>
       </div>
-      <div class="hero__meta reveal" aria-hidden="true">
-        <span>17+ yrs</span><span>VFX · Animation · AI film</span><span>EN / ES / PT</span>
-      </div>
+      <a class="hero__scroll reveal" href="#reels" aria-label="Scroll to reels"><span></span></a>
+      <button class="hero__sound" id="hero-sound" hidden aria-label="Unmute">🔇</button>
     </section>
 
     <!-- MARQUEE -->
@@ -73,24 +69,37 @@
       <div class="marquee__track" id="marquee"></div>
     </div>
 
-    <!-- WORK -->
-    <section class="section" id="work">
+    <!-- REELS -->
+    <section class="section" id="reels">
       <div class="section__head">
-        <h2 class="section__title"><span class="num">01</span> Selected work</h2>
-        <div class="filters" id="filters" role="tablist" aria-label="Filter projects">
-          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="ai-film" role="tab" aria-selected="false">AI films</button>
-          <button class="chip" data-filter="vfx" role="tab" aria-selected="false">VFX credits</button>
-          <button class="chip" data-filter="talk" role="tab" aria-selected="false">Talks</button>
-        </div>
+        <h2 class="section__title"><span class="num">01</span> Reels</h2>
+        <p class="section__note">Two reels. One is the craft, the other is the fun.</p>
       </div>
-      <div class="grid" id="projects"></div>
+      <div class="reels" id="reels-grid"></div>
+    </section>
+
+    <!-- AI WORK -->
+    <section class="section" id="ai">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">02</span> Selected work <em>AI</em></h2>
+        <p class="section__note">Films directed with generative pipelines since 2025.</p>
+      </div>
+      <div class="grid" id="ai-grid"></div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="section" id="credits">
+      <div class="section__head">
+        <h2 class="section__title"><span class="num">03</span> Filmography</h2>
+        <p class="section__note">VFX &amp; animation credits, 2009 – today.</p>
+      </div>
+      <ol class="credits" id="credits-list"></ol>
     </section>
 
     <!-- ABOUT -->
     <section class="section section--split" id="about">
       <div class="section__head">
-        <h2 class="section__title"><span class="num">02</span> About</h2>
+        <h2 class="section__title"><span class="num">04</span> About</h2>
       </div>
       <div class="about">
         <div class="about__text">
@@ -111,6 +120,8 @@
           <ul class="pills" id="partners"></ul>
           <h3 class="mono">Recognition</h3>
           <ol class="awards" id="awards"></ol>
+          <h3 class="mono">Talks</h3>
+          <ul class="talks" id="talks"></ul>
         </aside>
       </div>
     </section>
@@ -118,7 +129,7 @@
     <!-- STUDIO -->
     <section class="section studio" id="studio">
       <div class="section__head">
-        <h2 class="section__title"><span class="num">03</span> Studio</h2>
+        <h2 class="section__title"><span class="num">05</span> Studio</h2>
       </div>
       <div class="studio__card">
         <p class="mono studio__kicker">Co-founder &amp; Creative Director</p>
@@ -148,7 +159,7 @@
     <!-- CONTACT -->
     <section class="section contact" id="contact">
       <div class="section__head">
-        <h2 class="section__title"><span class="num">04</span> Contact</h2>
+        <h2 class="section__title"><span class="num">06</span> Contact</h2>
       </div>
       <p class="contact__big">Got a creature to bring to life, a story to tell, or a pipeline to figure out?<br>
         <a id="contact-email" href="#">Write to me</a>.</p>

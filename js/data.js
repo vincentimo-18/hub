@@ -1,20 +1,17 @@
 /* =====================================================================
    CONTENIDO DEL SITIO — edita este archivo para añadir cosas.
-   Todo lo que se ve en la página (proyectos, créditos, enlaces, textos
-   cortos) sale de aquí. No hace falta tocar index.html ni main.js.
+   Todo lo que se ve en la página sale de aquí. No hace falta tocar
+   index.html ni main.js.
 
-   Campos de un proyecto:
-     title       Título
-     role        Tu rol (Director, Lead Animator, ...)
-     year        "2025" o "2025 – 2026"
-     category    "ai-film" | "vfx" | "talk"   (define la pestaña del filtro)
-     tags        Lista corta de etiquetas
-     description Una o dos frases
-     thumb       Ruta a una imagen 16:9 (opcional; sin ella se genera una tarjeta tipográfica)
-     video       URL de YouTube o Vimeo (opcional; abre un lightbox con el vídeo)
-     link        URL externa (opcional; si no hay vídeo se abre este enlace)
-     awards      Lista de premios / selecciones (opcional)
-     featured    true para que ocupe doble ancho en la parrilla
+   hero.video   Vídeo de fondo de la cabecera. Puede ser:
+                - un MP4 local:  "assets/video/hero.mp4"  (recomendado, se ve
+                  perfecto y sin logos; 10-30 s, sin audio, ≤ 15 MB)
+                - un enlace de YouTube o Vimeo (se incrusta en silencio y en bucle)
+                - ""  → se usa hero.poster como imagen fija
+   reels        Los dos demo reels grandes (YouTube o Vimeo).
+   aiWork       Trabajo seleccionado con IA: vídeos de YouTube/Vimeo. La
+                miniatura de YouTube se saca sola; para Vimeo pon `thumb`.
+   credits      Filmografía VFX / animación: lista limpia, sin vídeos.
    ===================================================================== */
 
 window.SITE = {
@@ -31,10 +28,31 @@ window.SITE = {
     "lead animation artist on Disney's Mufasa: The Lion King. Co-founder and creative director of " +
     "Beat Maps Squad, a London-based AI-first creative studio.",
 
-  showreel: "https://vimeo.com/1060555798",
   linktree: "https://linktr.ee/burgosdraw",
 
-  /* Tira de créditos que corre en el marquee bajo el hero */
+  hero: {
+    video: "https://vimeo.com/1060555798",   // cámbialo cuando quieras: MP4 local, YouTube o Vimeo
+    poster: "assets/img/hero-llaqta.jpg"     // imagen fija de respaldo (y para móviles con datos)
+  },
+
+  reels: [
+    {
+      title: "Showreel 2025",
+      kicker: "Character & creature animation",
+      description: "Seventeen years of keyframe performance: Mufasa, Avatar: The Last Airbender, Prehistoric Planet, Avengers: Infinity War and more.",
+      video: "https://vimeo.com/1060555798",
+      thumb: ""
+    },
+    {
+      title: "Cartoon reel",
+      kicker: "Stylized & feature animation",
+      description: "Stylized character work: The LEGO Ninjago Movie, Wonder Park, Tom & Jerry, Metegol and commercials.",
+      video: "",          // pega aquí el enlace de YouTube o Vimeo
+      thumb: ""
+    }
+  ],
+
+  /* Tira de créditos que corre bajo la cabecera */
   marquee: [
     "Mufasa: The Lion King", "Avengers: Infinity War", "Avatar: The Last Airbender",
     "Prehistoric Planet", "Predator: Badlands", "Christopher Robin", "His Dark Materials",
@@ -42,43 +60,30 @@ window.SITE = {
     "Wonder Park", "Man vs Baby"
   ],
 
-  projects: [
+  /* Trabajo seleccionado — IA. Solo vídeos. */
+  aiWork: [
     {
       title: "LLAQTA — The Lost City",
       role: "Creator & Director",
       year: "Ongoing",
-      category: "ai-film",
-      tags: ["Original IP", "Sci-fi survival series", "Worldbuilding"],
-      description:
-        "Episodic, fully AI-generated sci-fi survival series. A long-term worldbuilding project " +
-        "with a trailer released on YouTube and the V-3 origin-sequence spinoff created with OpenArt Director Mode.",
+      description: "Episodic, fully AI-generated sci-fi survival series. Long-term worldbuilding project; trailer on YouTube, V-3 origin sequence made with OpenArt Director Mode.",
+      video: "",                              // enlace de YouTube del tráiler
       thumb: "assets/img/hero-llaqta.jpg",
-      video: "",
-      link: "https://linktr.ee/burgosdraw",
       featured: true
     },
     {
       title: "The Immigrants",
       role: "Director",
       year: "2025 – 2026",
-      category: "ai-film",
-      tags: ["AI short film", "3'14\""],
-      description: "An AI short film about leaving, arriving and everything in between.",
+      description: "AI short film, 3'14\".",
       video: "",
-      link: "https://linktr.ee/burgosdraw",
-      awards: [
-        "Finalist — AI Movie Awards Mallorca (AIMA)",
-        "Finalist — Loop Festival, Japan 2026",
-        "Shortlisted — AI Film Awards, French Riviera"
-      ]
+      awards: ["Finalist — AI Movie Awards Mallorca (AIMA)", "Finalist — Loop Festival, Japan 2026", "Shortlisted — AI Film Awards, French Riviera"]
     },
     {
       title: "Mika: Into the Unknown",
       role: "Director",
       year: "2025",
-      category: "ai-film",
-      tags: ["AI short film", "Beat Maps Squad"],
-      description: "A short adventure produced with the Beat Maps Squad collective.",
+      description: "AI short film made with the Beat Maps Squad collective.",
       video: "",
       link: "https://bmsquad.com/project/mika",
       awards: ["3rd Place & Audience Favorite — Big Screen Hack"]
@@ -87,112 +92,35 @@ window.SITE = {
       title: "Out of Power",
       role: "Beat Maps Squad",
       year: "2025",
-      category: "ai-film",
-      tags: ["Studio project", "Social cause"],
       description: "Cinematic, AI-assisted visual production for a social-cause initiative.",
       video: "",
       link: "https://bmsquad.com/project/out-of-power"
-    },
-    {
-      title: "Mufasa: The Lion King",
-      role: "Lead Animator · MPC",
-      year: "2024",
-      category: "vfx",
-      tags: ["Disney", "Creature animation"],
-      description: "Led animation teams on Disney's photoreal prequel, developing keyframe performances for complex creatures.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Prehistoric Planet",
-      role: "Lead Animator · MPC",
-      year: "2022 – 2023",
-      category: "vfx",
-      tags: ["Apple TV+", "VES & Annie nominated"],
-      description: "Creature locomotion and behaviour for the BBC / Apple TV+ natural-history series.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Avatar: The Last Airbender — S2",
-      role: "Senior Animator · Framestore",
-      year: "2025",
-      category: "vfx",
-      tags: ["Netflix", "Character & creature"],
-      description: "Senior character and creature animation for the second season of the Netflix series.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Predator: Badlands",
-      role: "Senior Animator · Trixter",
-      year: "2025",
-      category: "vfx",
-      tags: ["20th Century Studios", "Creature"],
-      description: "High-quality keyframe creature animation.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Avengers: Infinity War",
-      role: "Animator · Framestore",
-      year: "2018",
-      category: "vfx",
-      tags: ["Marvel", "Academy Award nominee", "VES winner"],
-      description: "Character animation, blending motion capture with keyframe acting.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Christopher Robin",
-      role: "Animator · Framestore",
-      year: "2018",
-      category: "vfx",
-      tags: ["Disney", "Academy Award nominee"],
-      description: "Expressive character animation for Winnie the Pooh and friends.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "His Dark Materials",
-      role: "Animator · Framestore",
-      year: "2019 – 2021",
-      category: "vfx",
-      tags: ["HBO / BBC", "BAFTA winner"],
-      description: "Dæmon creature animation across the series.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "The Suicide Squad",
-      role: "Animator · Framestore",
-      year: "2021",
-      category: "vfx",
-      tags: ["DC / Warner Bros."],
-      description: "Creature and character animation.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Maleficent: Mistress of Evil",
-      role: "Senior Animator · MPC",
-      year: "2019",
-      category: "vfx",
-      tags: ["Disney"],
-      description: "Creature and character animation.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "The LEGO Ninjago Movie",
-      role: "Senior Animator · Animal Logic",
-      year: "2017",
-      category: "vfx",
-      tags: ["Warner Bros.", "Stylized"],
-      description: "Stylized character performances in Sydney.",
-      link: "https://www.imdb.com/name/nm4443508/"
-    },
-    {
-      title: "Warsaw Glitch 2026",
-      role: "Speaker",
-      year: "28 – 30 Aug 2026",
-      category: "talk",
-      tags: ["Warsaw, Poland", "AI & animation"],
-      description: "Talk on animating the future: seventeen years of VFX craft meeting generative AI pipelines.",
-      thumb: "assets/img/warsaw-glitch-2026.jpg",
-      link: "https://warsawglitch.com"
     }
+  ],
+
+  /* Filmografía VFX / animación — lista, sin vídeos */
+  credits: [
+    { title: "Unannounced feature film", role: "Senior Character/Creature Animator", studio: "Framestore", year: "2025 –" },
+    { title: "Avatar: The Last Airbender — S2", role: "Senior Animator", studio: "Framestore · Netflix", year: "2025" },
+    { title: "Man vs Baby", role: "Senior Animator", studio: "Framestore · Netflix", year: "2025" },
+    { title: "Predator: Badlands", role: "Senior Animator", studio: "Trixter", year: "2025" },
+    { title: "Mufasa: The Lion King", role: "Lead Animator", studio: "MPC · Disney", year: "2024" },
+    { title: "Prehistoric Planet", role: "Lead Animator", studio: "MPC · Apple TV+", year: "2022 – 2023" },
+    { title: "The Suicide Squad", role: "Animator", studio: "Framestore · Warner Bros.", year: "2021" },
+    { title: "Tom & Jerry", role: "Animator", studio: "Framestore · Warner Bros.", year: "2021" },
+    { title: "His Dark Materials", role: "Animator", studio: "Framestore · HBO / BBC", year: "2019 – 2021" },
+    { title: "Maleficent: Mistress of Evil", role: "Senior Animator", studio: "MPC · Disney", year: "2019" },
+    { title: "Christopher Robin", role: "Animator", studio: "Framestore · Disney", year: "2018" },
+    { title: "Avengers: Infinity War", role: "Animator", studio: "Framestore · Marvel", year: "2018" },
+    { title: "The LEGO Ninjago Movie", role: "Senior Animator", studio: "Animal Logic · Warner Bros.", year: "2017" },
+    { title: "Wonder Park", role: "Senior Animator", studio: "Ilion Animation · Paramount", year: "2015 – 2016" },
+    { title: "Little Rooster's Egg-cellent Adventure", role: "Animation Supervisor", studio: "Huevocartoon", year: "2013 – 2014" },
+    { title: "Metegol (Underdogs)", role: "Senior Animator", studio: "Catmandu / 100 Bares", year: "2012" }
+  ],
+
+  /* Charlas */
+  talks: [
+    { title: "Warsaw Glitch 2026", role: "Speaker", when: "28 – 30 Aug 2026 · Warsaw, Poland", link: "https://warsawglitch.com", thumb: "assets/img/warsaw-glitch-2026.jpg" }
   ],
 
   /* Estudios y partners — se muestran como texto en la sección About */
