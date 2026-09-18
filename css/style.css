@@ -106,8 +106,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @keyframes heroDrift { from { transform: scale(1.04) translateX(0); } to { transform: scale(1.1) translateX(-1.5%); } }
 
 .hero__inner { max-width: 980px; }
-.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-2); margin: 0 0 24px; }
-.eyebrow__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red-2); box-shadow: 0 0 0 4px rgba(184,31,51,.25); }
+.eyebrow { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-2); margin: 0 0 24px; }
+.eyebrow__dot { display: inline-block; vertical-align: middle; margin-right: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--red-2); box-shadow: 0 0 0 4px rgba(184,31,51,.25); }
 
 .hero__title { margin: 0 0 18px; line-height: .86; letter-spacing: -.03em; font-weight: 900; font-stretch: 100%; text-transform: uppercase; }
 .hero__first { display: block; font-size: clamp(28px, 4.5vw, 56px); font-weight: 600; color: var(--fg-2); letter-spacing: .02em; margin-bottom: .1em; }
@@ -115,7 +115,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Signature (brand image) replaces the typographic title when present */
 .hero__title.has-signature { line-height: 0; }
 .hero__title.has-signature .hero__first, .hero__title.has-signature .hero__last { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.hero__signature { width: min(720px, 88vw); height: auto; filter: drop-shadow(0 0 40px rgba(227,194,60,.25)); }
+.hero__signature { width: min(660px, 88vw); height: auto; filter: drop-shadow(0 0 40px rgba(227,194,60,.25)); }
 
 .hero__tagline {
   display: inline-block; margin: 8px 0 22px;
@@ -299,3 +299,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .hero__bg img, .marquee__track { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- Brand signature in the nav ---------- */
+.brand__sig { height: 34px; width: auto; filter: drop-shadow(0 0 6px rgba(227,194,60,.25)); }

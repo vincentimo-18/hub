@@ -37,7 +37,7 @@ Todo se edita en `js/data.js`.
 
 **Un enlace nuevo** (Contact) → añade `{ label, url, handle }` a `links`.
 
-**La firma / logo** → guarda la imagen como `assets/img/oscar-burgos-signature.png`
+**La firma / logo** → está en `assets/img/oscar-burgos-signature.png` (extraída del banner de Magnific). Para cambiarla, sustituye ese archivo
 (PNG con fondo transparente, idealmente ≥ 1600 px de ancho). El hero la detecta
 automáticamente y sustituye el título tipográfico por ella.
 
