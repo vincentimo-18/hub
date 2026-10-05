@@ -12,7 +12,7 @@
   /* ---------- Shared chrome: nav, contact, footer, lightbox ---------- */
   const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#${id}"></use></svg>`;
   const iconLink = (l) => `<a href="${esc(l.url)}" ${l.url.startsWith("mailto:") ? "" : 'target="_blank" rel="noopener"'} aria-label="${esc(l.label)}" title="${esc(l.label)}">${icon(l.icon)}</a>`;
-  const NAV =[["index.html", "Home"], ["work.html", "Work"], ["credits.html", "Credits"], ["awards.html", "Awards"], ["about.html", "About"], ["#contact", "Contact"]];
+  const NAV =[["index.html", "Home"], ["work.html", "Work"], ["worlds.html", "Worlds"], ["credits.html", "Credits"], ["awards.html", "Awards"], ["about.html", "About"], ["#contact", "Contact"]];
   document.body.insertAdjacentHTML("afterbegin", `
     <a class="skip" href="#main">Skip to content</a>
     <header class="nav" id="top">
@@ -220,6 +220,20 @@
         $$(".card", grid).forEach((c) => c.classList.toggle("is-hidden", b.dataset.kind !== "All" && c.dataset.kind !== b.dataset.kind));
       });
     }
+  }
+
+  /* ---------- Worlds (3D splats from the image-blaster pipeline; the viewer is js/worlds-viewer.js) ---------- */
+  const worldsGrid = $("#worlds-grid");
+  if (worldsGrid) {
+    const worlds = window.WORLDS || [];
+    $("#worlds-empty").hidden = worlds.length > 0;
+    worldsGrid.innerHTML = worlds.map((w, i) => `<a class="card" href="#${esc(w.slug)}" data-world="${esc(w.slug)}">
+      <div class="card__media">${w.thumb ? `<img src="${esc(w.thumb)}" alt="" loading="lazy">` : `<div class="card__placeholder"><span>${String(i + 1).padStart(2, "0")}</span></div>`}<span class="card__cat">Explore 3D</span></div>
+      <div class="card__body">
+        <div class="card__top"><span>${esc(w.project || "World")}</span><span>${esc(w.year)}</span></div>
+        <h3 class="card__title">${esc(w.title)}</h3>
+        <p class="card__desc">${esc(w.description)}</p>
+      </div></a>`).join("");
   }
 
   /* ---------- Credits list ---------- */

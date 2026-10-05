@@ -1,0 +1,4 @@
+# image-blaster se clona aquí con pipeline/setup.sh (no se versiona: trae ~25 MB de demos)
+pipeline/image-blaster/
+
+.DS_Store

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worlds — Oscar Burgos</title>
+  <meta name="description" content="Explorable 3D worlds built from single frames of Oscar Burgos's AI films: Gaussian splats you can walk through in the browser.">
+  <meta name="theme-color" content="#060606">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Worlds — Oscar Burgos">
+  <meta property="og:description" content="One frame in, a whole location out. Walk through the sets of my AI films.">
+  <meta property="og:image" content="assets/img/og-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/timo-32.png">
+  <link rel="apple-touch-icon" href="assets/img/timo-192.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js",
+        "@sparkjsdev/spark": "https://cdn.jsdelivr.net/npm/@sparkjsdev/spark@2.0.0/dist/spark.module.min.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="main">
+    <header class="page-head">
+      <img class="page-head__bg" src="assets/img/hero-llaqta.jpg" alt="" aria-hidden="true">
+      <p class="mono page-head__kicker">Worlds</p>
+      <h1 class="page-head__title">One frame in.<span class="dim">A whole<br>location out.</span></h1>
+      <p class="page-head__note">Sets from my films, rebuilt as explorable 3D from a single image. Click a world to walk through it, then grab your own frame.</p>
+    </header>
+
+    <section class="section" id="worlds">
+      <div class="grid" id="worlds-grid"></div>
+      <p class="worlds__empty" id="worlds-empty" hidden>First worlds landing soon.</p>
+    </section>
+  </main>
+
+  <div class="world-viewer" id="world-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="world-viewer-title">
+    <canvas class="world-viewer__canvas" id="world-canvas"></canvas>
+    <div class="world-viewer__bar">
+      <div>
+        <p class="mono" id="world-viewer-kicker"></p>
+        <h2 class="world-viewer__title" id="world-viewer-title"></h2>
+      </div>
+      <div class="world-viewer__actions">
+        <button class="btn btn--small btn--ghost" id="world-sound" hidden aria-pressed="false">Sound off</button>
+        <button class="btn btn--small btn--ghost" id="world-capture">Capture frame</button>
+        <button class="world-viewer__close" id="world-close" aria-label="Close">×</button>
+      </div>
+    </div>
+    <p class="world-viewer__status mono" id="world-status">Loading world…</p>
+    <p class="world-viewer__hint mono">Drag to look · WASD to move · E/Q up/down · Shift faster</p>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="assets/worlds/worlds.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/worlds-viewer.js"></script>
+</body>
+</html>

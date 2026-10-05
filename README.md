@@ -7,6 +7,7 @@ Web estática de **Oscar Burgos** — Director & VFX Animator. Sin build, sin de
 ```
 index.html            Portada: hero con vídeo, los dos reels, 3 proyectos destacados, premios
 work.html             Todos los proyectos IA (con filtros) + charlas
+worlds.html           Mundos 3D explorables (gaussian splats) salidos del pipeline image-blaster
 credits.html          Filmografía VFX
 awards.html           Premios y festivales
 about.html            Bio, estudio (Beat Maps Squad) y Timo
@@ -16,6 +17,9 @@ js/main.js            Inyecta nav + contacto + pie en todas las páginas, render
                       filtros, lightbox de vídeo, menú móvil
 assets/img/           Imágenes (firma, Timo, favicon, pósters, miniaturas…)
 assets/video/         hero.mp4 (cabecera) y reel-cartoon-preview.mp4 (loop del Cartoon reel)
+assets/worlds/        Mundos publicados: worlds.js (lista, la genera el pipeline) + una carpeta por mundo
+js/worlds-viewer.js   Visor 3D de worlds.html (three.js + Spark desde CDN)
+pipeline/             image-blaster: de una imagen a set 3D + props + sonido → ver pipeline/README.md
 site.webmanifest      Icono / nombre para "añadir a pantalla de inicio"
 ```
 
@@ -61,6 +65,11 @@ participaste (se muestran atenuadas con la etiqueta "Production credit").
 **Filmografía** → `credits`: `{ title, role, studio, year }`. Solo lista, sin vídeos.
 
 **Charlas** → `talks`. **Timo** → `timo`.
+
+**Mundos 3D** → no se editan en `data.js`: se publican desde el pipeline con
+`/image-blast-publish <slug>` (ver [`pipeline/README.md`](pipeline/README.md)), que copia los archivos a
+`assets/worlds/<slug>/` y actualiza `assets/worlds/worlds.js`. Título, descripción u orden se pueden
+retocar a mano en ese archivo.
 
 **Redes** → `links`: se muestran como iconos (arriba en la nav, abajo en Contact y en el pie).
 `icon` es el id dentro de `assets/img/icons.svg` (instagram, youtube, linkedin, vimeo, imdb,

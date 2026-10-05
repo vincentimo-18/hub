@@ -424,3 +424,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 720px) { .nav__social { display: none; } .social a { width: 56px; height: 56px; font-size: 22px; } }
 
 @media (max-width: 1180px) { .nav__cta { display: none; } .nav__links { gap: 20px; } }
+
+/* worlds: explorable 3D splats (worlds.html + js/worlds-viewer.js) */
+.worlds__empty { margin: 0; padding: 48px 0; color: var(--fg-3); font-family: var(--mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
+.world-viewer { position: fixed; inset: 0; z-index: 100; background: var(--bg); }
+.world-viewer[hidden] { display: none; }
+.world-viewer__canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+.world-viewer__canvas:active { cursor: grabbing; }
+.world-viewer__bar { position: absolute; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 18px var(--gutter); background: linear-gradient(to bottom, rgba(6,6,6,.85), transparent); pointer-events: none; }
+.world-viewer__bar > * { pointer-events: auto; }
+.world-viewer__bar .mono { margin: 0; color: var(--gold); }
+.world-viewer__title { margin: 4px 0 0; font-size: clamp(20px, 2.4vw, 32px); font-weight: 500; letter-spacing: -.01em; text-transform: uppercase; }
+.world-viewer__actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.world-viewer__close { font-size: 40px; line-height: 1; color: var(--fg-2); padding: 0 4px; }
+.world-viewer__close:hover { color: var(--gold); }
+.world-viewer__status { position: absolute; inset: 50% 0 auto; transform: translateY(-50%); margin: 0; text-align: center; color: var(--fg-2); pointer-events: none; }
+.world-viewer__hint { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 18px; margin: 0; color: var(--fg-3); font-size: 11px; pointer-events: none; }
+@media (max-width: 720px) {
+  .world-viewer__hint { display: none; }
+  .world-viewer__bar { flex-direction: column; padding-right: 64px; }
+  .world-viewer__close { position: absolute; top: 12px; right: 16px; }
+}
