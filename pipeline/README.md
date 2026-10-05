@@ -115,8 +115,8 @@ node .claude/scripts/publish/publish-world.mjs --world llaqta-canyon \
   --project LLAQTA --dry-run      # quita --dry-run para escribir
 ```
 
-Copia el splat (`500k` por defecto; `--quality 100k` para que vaya ligero en móvil), la miniatura, la
-panorámica y el loop de ambiente si existe. Luego, en el repo hub: `git add assets/worlds && git commit && git push`.
+Copia el splat (`500k` por defecto; `--quality 100k` para que vaya ligero en móvil) y la miniatura (la
+panorámica solo con `--with-pano`, pesa ~12 MB) y el loop de ambiente si existe. Luego, en el repo hub: `git add assets/worlds && git commit && git push`.
 
 La página `worlds.html` muestra una tarjeta por mundo; al hacer clic abre un visor a pantalla completa
 (three.js + [Spark](https://sparkjs.dev), desde CDN, sin build) que arranca en el punto de vista de la imagen

@@ -8,7 +8,7 @@
    Uso (desde la raíz de image-blaster):
      node .claude/scripts/publish/publish-world.mjs --world <slug> \
        [--quality 500k|100k|full_res] [--title "…"] [--description "…"] \
-       [--project "LLAQTA"] [--year 2026] [--hub <ruta al repo hub>] [--dry-run]
+       [--project "LLAQTA"] [--year 2026] [--with-pano] [--hub <ruta al repo hub>] [--dry-run]
 
    Por defecto el hub es ../.. (image-blaster vive en hub/pipeline/image-blaster). */
 import fs from "node:fs";
@@ -106,7 +106,9 @@ function main() {
   const rel = (f) => `assets/worlds/${slug}/${f}`;
   const copies = [[path.join(outWorld, spzName), "world.spz"]];
   if (thumb) copies.push([path.join(outWorld, thumb), `thumb${path.extname(thumb)}`]);
-  if (pano) copies.push([path.join(outWorld, pano), `pano${path.extname(pano)}`]);
+  // The panorama is ~12 MB and the web viewer doesn't use it: only on request
+  const withPano = Boolean(pano && args["with-pano"]);
+  if (withPano) copies.push([path.join(outWorld, pano), `pano${path.extname(pano)}`]);
   if (ambient) copies.push([path.join(worldDir, "output", "sfx", ambient.name), `ambient${path.extname(ambient.name)}`]);
 
   const manifestPath = path.join(hub, "assets", "worlds", "worlds.js");
@@ -121,7 +123,7 @@ function main() {
     year: pick(args.year, prev.year || String(new Date().getFullYear())),
     splat: rel("world.spz"),
     thumb: thumb ? rel(`thumb${path.extname(thumb)}`) : "",
-    pano: pano ? rel(`pano${path.extname(pano)}`) : "",
+    pano: withPano ? rel(`pano${path.extname(pano)}`) : "",
     ambient: ambient ? rel(`ambient${path.extname(ambient.name)}`) : "",
     flipY: sem.flip_y ?? true,
     scale: sem.metric_scale_factor ?? 1,

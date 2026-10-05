@@ -31,7 +31,7 @@ function resize() {
 }
 
 /* World Labs splats come in OpenCV axes (y down) with the source camera at the origin:
-   flip them, apply the metric scale, and start the viewer where the original frame was shot. */
+   flip them, apply the metric scale, lift the ground to y = 0 and start where the original frame was shot. */
 async function open(world) {
   if (!renderer) setup();
   current = world;
@@ -42,7 +42,7 @@ async function open(world) {
   viewer.hidden = false;
   document.body.style.overflow = "hidden";
   resize();
-  camera.position.set(0, 0, 0);
+  camera.position.set(0, world.groundOffset || 0, 0); // the source camera, now that the ground sits at y = 0
   camera.quaternion.identity();
 
   if (splat) { scene.remove(splat); splat.dispose(); }
