@@ -1,0 +1,19 @@
+{
+  "extraKnownMarketplaces": {
+    "opus-video-skills": {
+      "source": { "source": "github", "repo": "tuzhechen2005/opus-video-skills" }
+    },
+    "lemolab": {
+      "source": { "source": "github", "repo": "lemomo-ai/lemo-opuscar" }
+    },
+    "makevoid-music-video": {
+      "source": { "source": "github", "repo": "makevoid/motion-graphics-music-video-skill" }
+    }
+  },
+  "enabledPlugins": {
+    "painted-animation@opus-video-skills": true,
+    "kinetic-reel@opus-video-skills": true,
+    "lemo-opuscar@lemolab": true,
+    "motion-graphics-music-video@makevoid-music-video": true
+  }
+}

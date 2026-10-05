@@ -75,6 +75,12 @@ imagen de fondo atenuada (`<img class="page-head__bg">`).
 **La firma / logo** → `assets/img/oscar-burgos-signature.png` (extraída del banner de
 Magnific). Para cambiarla, sustituye ese archivo por un PNG con fondo transparente.
 
+## Kit de vídeo con IA
+
+`ai-toolkit/` contiene la guía de las herramientas de vídeo y animación con Claude Opus 5.5
+(qué hace cada repo y cómo usarlo) y `install-mac.sh`, que lo instala todo en el Mac.
+`.claude/settings.json` carga las skills en las sesiones de Claude Code sobre este repo.
+
 ## Ver en local
 
 Abre `index.html` en el navegador, o:
